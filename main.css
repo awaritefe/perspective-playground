@@ -57,7 +57,7 @@ section.settings {
 .box {
   width: 150px;
   height: 150px;
-  background: #8d81f3;
+  background-color: #8d81f3;
 }
 
 button {

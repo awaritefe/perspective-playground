@@ -8,29 +8,34 @@
 
 <body>
   <div id="app">
-    <h2>CSS3 Perspective Playground</h2>
+    <h2 >CSS3 Perspective Playground</h2>
     <main>
       <section class="settings">
         <div class="settings-container">
+          <label for="head">Box Color</label>
+          <input type="color" v-model="bgColor"/>
+          
           <label>perspective: {{ perspective }}px;</label>
           <input type="range" min="0" max="999" v-model="perspective"/>
 
-          <label>rotateX: {{ rotateX  }}deg; </label>
+          <label>rotateX: {{ rotateX }}deg; </label>
           <input type="range" min="-180" max="180" v-model="rotateX"/>
 
-          <label>rotateY: {{ rotateY  }}deg; </label>
+          <label>rotateY: {{ rotateY }}deg; </label>
           <input type="range" min="-180" max="180" v-model="rotateY"/>
 
-          <label>rotateZ: {{ rotateZ  }}deg; </label>
+          <label>rotateZ: {{ rotateZ }}deg; </label>
           <input type="range" min="-180" max="180" v-model="rotateZ"/>
-
+          
           <button type="button" @click.prevent="reset">Reset</button>
           <button type="button" @click.prvent="copy">Copy</button>
+          
+          
         </div>
       </section>
       <section class="output">
         <div class="box-container">
-          <div class="box" :style="box"></div>
+          <div class="box" :style="[box, boxColor]" ></div>
         </div>
       </section>
     </main>

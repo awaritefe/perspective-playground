@@ -4,7 +4,8 @@ const vm = Vue.createApp({
 			perspective: 100,
 			rotateX: 0,
 			rotateY: 0,
-			rotateZ: 0
+			rotateZ: 0,
+			bgColor: '#8d81f3'
 		}
 	},
 	computed: {
@@ -15,6 +16,13 @@ const vm = Vue.createApp({
 					rotateX(${this.rotateX}deg)
 					rotateY(${this.rotateY}deg)
 					rotateZ(${this.rotateZ}deg)
+				`
+			}
+		},
+		boxColor() {
+			return {
+				backgroundColor: `
+					${this.bgColor}
 				`
 			}
 		}
